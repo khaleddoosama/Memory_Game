@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <form action="#" class=" d-none">
+        <div class="mb-3 row nameee position-absolute top-50 start-50 translate-middle d-flex align-items-center w-50 fs-2" id="name">
+            <label for="staticName" class="col-sm-2 col-form-label ">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext border" id="staticName" autofocus>
+            </div>
+        </div>
+    </form>
+
+    <div class="control-buttons position-fixed s-0 top-0 w-100 h-100 ">
+        <span class="position-absolute start-50 top-50 translate-middle fs-4 text-center px-4 py-3 ">Start Game</span>
+    </div>
+    <div class="info-container d-flex justify-content-between ms-auto me-auto mt-3 overflow-hidden p-3 fs-3">
+        <div class="name">
+            Hello: <span></span>
+        </div>
+        <div class="tries">
+            Wrong Tries: <span>0</span>
+        </div>
+    </div>
+
+    <div class="memory-game-blocks mt-3 mb-3 ms-auto me-auto">
+        <div class="row order-0">
+            <div class="game-block col" data-technology="angular">
+                <div class="face front "></div>
+                <div class="face back">
+                    <img src="imgs/angular.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col " data-technology="angular">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/angular.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="vuejs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/vuejs.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="vuejs">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/vuejs.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="css3">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/css3.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row order-1">
+            <div class="game-block col" data-technology="css3">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/css3.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="github">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/github.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="github">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/github.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="fan">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/fan.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="fan">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/fan.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row order-2">
+            <div class="game-block col" data-technology="html5">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/html5.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="html5">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/html5.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="jet">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/jet.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="jet">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/jet.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="jug">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/jug.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row order-3">
+            <div class="game-block col" data-technology="jug">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/jug.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="python">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/python.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="python">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/python.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="react">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/react.svg" alt="">
+                </div>
+            </div>
+            <div class="game-block col" data-technology="react">
+                <div class="face front"></div>
+                <div class="face back">
+                    <img src="imgs/react.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="success" src="audio/Success.mp4" preload="auto"></audio>
+    <audio id="fail" src="audio/Fail.mp4" preload="auto"></audio>
+
+
+    <!-- Vertically centered modal -->
+    <div class="modal-dialog modal-dialog-centered success">
+        <div class="modal fade show" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+            style="display: block;" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Congratulation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>You Win, Do You Want A New Game?</p>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- leader board -->
+    <div class="leader">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="leader-title">
+                        <h2 class="p-2 m-0">Leader Board</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                        <i class="fa-solid fa-trophy p-2 fs-1"></i>
+            </div>
+            <div class="bd-example">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="col-4">#</th>
+                            <th scope="col" class="col-4">Name</th>
+                            <th scope="col" class="col-4">Number Of Wins</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                
+                    </tbody>
+                </table>
+            </div>  
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/all.min.js"></script>
+
+</body>
+
+</html>
